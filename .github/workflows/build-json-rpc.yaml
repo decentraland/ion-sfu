@@ -8,6 +8,7 @@ on:
     - master
 jobs:
   build:
+    if: ${{ false }}
     name: build json-rpc
     runs-on: ubuntu-latest
     steps:

@@ -8,6 +8,7 @@ on:
     - master
 jobs:
   build:
+    if: ${{ false }}
     name: build grpc
     runs-on: ubuntu-latest
     steps:
@@ -15,4 +16,4 @@ jobs:
 
       - name: build grpc
         run: make build_grpc
-        
+

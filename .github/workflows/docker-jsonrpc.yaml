@@ -10,12 +10,13 @@ on:
     - master
 jobs:
   build:
+    if: ${{ false }}
     name: build and push
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v2
-    
+
       - name: build
         run: docker build --tag decentraland/ion-sfu:latest-jsonrpc -f cmd/signal/json-rpc/Dockerfile .
 
