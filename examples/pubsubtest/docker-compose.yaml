@@ -8,7 +8,7 @@ services:
       - 8000:80
 
   sfu:
-    image: pionwebrtc/ion-sfu:latest-allrpc
+    image: decentraland/ion-sfu:latest-allrpc
     restart: always
     environment:
       - gaddr=0.0.0.0:50051

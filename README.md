@@ -48,7 +48,7 @@ go build ./cmd/signal/json-rpc/main.go && ./main -c config.toml
 ##### Using docker
 
 ```
-docker run -p 7000:7000 -p 5000-5200:5000-5200/udp pionwebrtc/ion-sfu:latest-jsonrpc
+docker run -p 7000:7000 -p 5000-5200:5000-5200/udp decentraland/ion-sfu:latest-jsonrpc
 ```
 
 ### SFU with gRPC signaling
@@ -64,7 +64,7 @@ go build ./cmd/signal/grpc/main.go && ./main -c config.toml
 ##### Using docker
 
 ```
-docker run -p 50051:50051 -p 5000-5200:5000-5200/udp pionwebrtc/ion-sfu:latest-grpc
+docker run -p 50051:50051 -p 5000-5200:5000-5200/udp decentraland/ion-sfu:latest-grpc
 ```
 
 ## Documentation

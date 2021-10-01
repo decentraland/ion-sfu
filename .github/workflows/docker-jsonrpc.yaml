@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
     
       - name: build
-        run: docker build --tag pionwebrtc/ion-sfu:latest-jsonrpc -f cmd/signal/json-rpc/Dockerfile .
+        run: docker build --tag decentraland/ion-sfu:latest-jsonrpc -f cmd/signal/json-rpc/Dockerfile .
 
       - name: login
         if: github.event_name == 'release'
@@ -25,12 +25,12 @@ jobs:
 
       - name: tag
         if: github.event_name == 'release'
-        run: docker tag pionwebrtc/ion-sfu:latest-jsonrpc pionwebrtc/ion-sfu:"$TAG"-jsonrpc
+        run: docker tag decentraland/ion-sfu:latest-jsonrpc decentraland/ion-sfu:"$TAG"-jsonrpc
         env:
           TAG: ${{ github.event.release.tag_name }}
 
       - name: push
         if: github.event_name == 'release'
-        run: docker push pionwebrtc/ion-sfu:latest-jsonrpc && docker push pionwebrtc/ion-sfu:"$TAG"-jsonrpc
+        run: docker push decentraland/ion-sfu:latest-jsonrpc && docker push decentraland/ion-sfu:"$TAG"-jsonrpc
         env:
           TAG: ${{ github.event.release.tag_name }}
